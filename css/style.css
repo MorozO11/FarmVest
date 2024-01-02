@@ -205,6 +205,24 @@ body {
      object-fit: contain;
 }
 
+.title {
+  color: #FFF;
+  font-size: 4.375rem;
+  font-weight: 700;
+  line-height: 1.1142857143;
+}
+
+.title span {
+  color: #23B123;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .header__container-big {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -262,6 +280,11 @@ body {
   -webkit-column-gap: 2.75rem;
      -moz-column-gap: 2.75rem;
           column-gap: 2.75rem;
+}
+
+.menu__link {
+  -webkit-transition: color 0.3s ease 0s;
+  transition: color 0.3s ease 0s;
 }
 
 .icon-menu {
@@ -542,6 +565,12 @@ body {
   }
 
   .button_border:hover {
-    background-color: #1b2327;
+    border: 1px solid #23B123;
+    color: #23B123;
+    background-color: transparent;
+  }
+
+  .menu__link:hover {
+    color: #23B123;
   }
 }
