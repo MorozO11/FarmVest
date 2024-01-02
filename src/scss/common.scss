@@ -1,1 +1,35 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+
+.page {
+
+    // .page__main
+
+    &__main {
+    }
+}
+
+.title{
+color: #FFF;
+font-size: toRem(70);
+font-weight: 700;
+line-height: math.div(78,70);
+span{
+    color: $greenColor;
+}
+}
+
+// ===================================================================================
+
+.form {
+
+    // .form__input
+
+    &__input {
+    }
+
+    // .form__button
+
+    &__button {
+    }
+}

@@ -25,7 +25,10 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: #1b2327;
+				border: 1px solid $greenColor;
+				color: $greenColor;
+				background-color: transparent;
+				
 			}
 		}
 	}
