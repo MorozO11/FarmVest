@@ -12,8 +12,9 @@
 .title{
 color: #FFF;
 font-size: toRem(70);
-font-weight: 700;
-line-height: math.div(78,70);
+font-weight:600;
+line-height: math.div(65,70);
+@include adaptiveValue("font-size",70, 45);
 span{
     color: $greenColor;
 }

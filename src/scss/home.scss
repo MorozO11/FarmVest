@@ -5,79 +5,88 @@
     // .main-blok__container
 
     &__container {
+        position: relative;
     }
 
     // .main-blok__content
 
     &__content {
+        padding-top: toRem(250);
+        padding-bottom: toRem(200);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     // .main-blok__title
 
     &__title {
+        max-width: toRem(750);
+
+        &:not(:last-child) {
+            margin-bottom: toRem(69);
+        }
+
     }
 
     // .main-blok__text
 
     &__text {
+        line-height:180%;
+        max-width: toRem(570);
+        &:not(:last-child) {
+            margin-bottom: toRem(48);
+        }
     }
 
     // .main-blok__form
 
-    &__form {
-    }
+    &__form {}
 
     // .main-blok__icons
 
-    &__icons {
-    }
-}
-.title {
+    &__icons {}
 }
 
-.button {
-}
+.title {}
+
+.button {}
+
 .icons-main-blok {
 
     // .icons-main-blok__item
 
-    &__item {
-    }
+    &__item {}
 
     // .icons-main-blok__item-1
 
-    &__item-1 {
-    }
+    &__item-1 {}
 
     // .icons-main-blok__item-2
 
-    &__item-2 {
-    }
+    &__item-2 {}
 
     // .icons-main-blok__item-3
 
-    &__item-3 {
-    }
+    &__item-3 {}
 
     // .icons-main-blok__item-4
 
-    &__item-4 {
-    }
+    &__item-4 {}
 
     // .icons-main-blok__item-5
 
-    &__item-5 {
-    }
+    &__item-5 {}
 
     // .icons-main-blok__item-6
 
-    &__item-6 {
-    }
+    &__item-6 {}
 
     // .icons-main-blok__item-7
 
-    &__item-7 {
-    }
+    &__item-7 {}
 }
 
 //====================================================================================================
