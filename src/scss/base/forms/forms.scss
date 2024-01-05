@@ -8,6 +8,10 @@
 	padding: toRem(6);
 	gap: toRem(5);
 	position: relative;
+	@media (max-width: em(430)) {
+		flex-direction: column;
+		
+	}
 
 	&__row {}
 
@@ -16,17 +20,13 @@
 	&__line {}
 
 	&__input {
+		height: toRem(64);
 		flex: 1 1 auto;
 		padding: toRem(20);
 		color: #263238;
 		font-weight: 500;
 		&::placeholder {
 			color: #263238;
-
-		}
-		&:focus::placeholder {
-			color: #263238;
-			opacity: 0;
 		}
 		&._form-error{
 			color: red;
@@ -60,7 +60,7 @@
 
 // <INPUTS>
 // Сніппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сніппет (HTML): chk

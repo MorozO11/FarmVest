@@ -2,17 +2,21 @@
 
 .main-blok {
 
+
+    // .main-blok__container-big
+    &__container-big{
+        position: relative;
+    }
     // .main-blok__container
 
     &__container {
-        position: relative;
     }
 
     // .main-blok__content
 
     &__content {
-        padding-top: toRem(250);
-        padding-bottom: toRem(200);
+        @include adaptiveValue("padding-top",250 ,130 );
+        @include adaptiveValue("padding-bottom",200 ,30 );
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -26,7 +30,8 @@
         max-width: toRem(750);
 
         &:not(:last-child) {
-            margin-bottom: toRem(69);
+            
+            @include adaptiveValue("margin-bottom",69 , 30);
         }
 
     }
@@ -38,12 +43,18 @@
         max-width: toRem(570);
         &:not(:last-child) {
             margin-bottom: toRem(48);
+            @include adaptiveValue("margin-bottom",48 , 20);
         }
     }
 
     // .main-blok__form
 
-    &__form {}
+    &__form {
+    @media (max-width: em(430)) {
+        width: 100%;
+        
+    }    
+    }
 
     // .main-blok__icons
 
@@ -58,35 +69,42 @@
 
     // .icons-main-blok__item
 
-    &__item {}
+    &__item {
+        position: absolute;
+
+    }
 
     // .icons-main-blok__item-1
 
-    &__item-1 {}
+    &__item_1 {
+        top: percent( 682, 974 );
+        left: 0;
+
+    }
 
     // .icons-main-blok__item-2
 
-    &__item-2 {}
+    &__item_2 {}
 
     // .icons-main-blok__item-3
 
-    &__item-3 {}
+    &__item_3 {}
 
     // .icons-main-blok__item-4
 
-    &__item-4 {}
+    &__item_4 {}
 
     // .icons-main-blok__item-5
 
-    &__item-5 {}
+    &__item_5 {}
 
     // .icons-main-blok__item-6
 
-    &__item-6 {}
+    &__item_6 {}
 
     // .icons-main-blok__item-7
 
-    &__item-7 {}
+    &__item_7 {}
 }
 
 //====================================================================================================
