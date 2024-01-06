@@ -364,6 +364,14 @@ textarea.input {
   left: 0;
   width: 100%;
   z-index: 50;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header._header-scroll {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .header__container-big {
@@ -396,29 +404,6 @@ textarea.input {
 
 .Header__logo img {
   max-width: 100%;
-}
-
-.Header__logo::before,
-.Header__logo::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  border: 1px solid #fff;
-}
-
-.Header__logo::before {
-  -webkit-transform: translate(calc(-50% - 1.75rem), -50%);
-      -ms-transform: translate(calc(-50% - 1.75rem), -50%);
-          transform: translate(calc(-50% - 1.75rem), -50%);
-}
-
-.Header__logo::after {
-  -webkit-transform: translate(calc(-50% + 1.6875rem), calc(-50% - 3.4375rem));
-      -ms-transform: translate(calc(-50% + 1.6875rem), calc(-50% - 3.4375rem));
-          transform: translate(calc(-50% + 1.6875rem), calc(-50% - 3.4375rem));
 }
 
 .menu {
@@ -457,6 +442,8 @@ textarea.input {
 }
 
 .main-blok__content {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,13 +473,75 @@ textarea.input {
   margin-bottom: 3rem;
 }
 
+.icons-main-blok {
+  pointer-events: none;
+}
+
 .icons-main-blok__item {
   position: absolute;
 }
 
 .icons-main-blok__item_1 {
-  top: 70.0205338809%;
+  top: 69.3018480493%;
+  left: 0.9375rem;
+}
+
+.icons-main-blok__item_2 {
+  top: 39.0143737166%;
+  left: 14.6296296296%;
+}
+
+.icons-main-blok__item_3 {
+  top: 77.7207392197%;
+  left: 24.8765432099%;
+}
+
+.icons-main-blok__item_4 {
+  top: 13.7577002053%;
+  left: 70.9259259259%;
+}
+
+.icons-main-blok__item_5 {
+  top: 43.0184804928%;
+  left: 81.7901234568%;
+}
+
+.icons-main-blok__item_6 {
+  top: 79.6714579055%;
+  left: 81.5432098765%;
+}
+
+.icons-main-blok__item_7 {
+  top: 37.6796714579%;
+  right: 0.9375rem;
+}
+
+.icons-main-blok__circle {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
   left: 0;
+}
+
+.icons-main-blok__circle::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.icons-main-blok__circle_1::before {
+  -webkit-transform: translate(calc(-50% - 1.75rem), -37%);
+      -ms-transform: translate(calc(-50% - 1.75rem), -37%);
+          transform: translate(calc(-50% - 1.75rem), -37%);
+}
+
+.icons-main-blok__circle_2::before {
+  -webkit-transform: translate(calc(-50% + 1.6875rem), -46%);
+      -ms-transform: translate(calc(-50% + 1.6875rem), -46%);
+          transform: translate(calc(-50% + 1.6875rem), -46%);
 }
 
 @media (min-width: 61.99875em) {
@@ -518,16 +567,6 @@ textarea.input {
     gap: 1rem;
   }
 
-  .Header__logo::before,
-  .Header__logo::after {
-    width: 36.5625rem;
-  }
-
-  .Header__logo::before,
-  .Header__logo::after {
-    height: 36.5625rem;
-  }
-
   .menu__list {
     -webkit-column-gap: 2.75rem;
        -moz-column-gap: 2.75rem;
@@ -549,6 +588,14 @@ textarea.input {
   .main-blok__text:not(:last-child) {
     margin-bottom: 3rem;
   }
+
+  .icons-main-blok__circle {
+    width: 36.5625rem;
+  }
+
+  .icons-main-blok__circle {
+    height: 36.5625rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -566,16 +613,6 @@ textarea.input {
 
   .header__actions {
     gap: 0.625rem;
-  }
-
-  .Header__logo::before,
-  .Header__logo::after {
-    width: 21.875rem;
-  }
-
-  .Header__logo::before,
-  .Header__logo::after {
-    height: 21.875rem;
   }
 
   .menu__list {
@@ -598,6 +635,14 @@ textarea.input {
 
   .main-blok__text:not(:last-child) {
     margin-bottom: 1.25rem;
+  }
+
+  .icons-main-blok__circle {
+    width: 21.875rem;
+  }
+
+  .icons-main-blok__circle {
+    height: 21.875rem;
   }
 }
 
@@ -730,6 +775,10 @@ textarea.input {
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
   }
+
+  .icons-main-blok {
+    opacity: 0.2;
+  }
 }
 
 @media (max-width: 26.875em) {
@@ -794,34 +843,6 @@ textarea.input {
     }
 }
 
-@supports (width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
-    .Header__logo::before,
-    .Header__logo::after {
-      width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem );
-    }
-}
-
-@supports not (width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
-    .Header__logo::before,
-    .Header__logo::after {
-      width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 83.125);
-    }
-}
-
-@supports (height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
-    .Header__logo::before,
-    .Header__logo::after {
-      height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem );
-    }
-}
-
-@supports not (height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
-    .Header__logo::before,
-    .Header__logo::after {
-      height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 83.125);
-    }
-}
-
 @supports ((-moz-column-gap: clamp( 0.9375rem , 0.5014097744rem  +  2.1804511278vw , 2.75rem )) or (column-gap: clamp( 0.9375rem , 0.5014097744rem  +  2.1804511278vw , 2.75rem ))) {
     .menu__list {
       -webkit-column-gap: clamp( 0.9375rem , 0.5014097744rem  +  2.1804511278vw , 2.75rem );
@@ -883,6 +904,30 @@ textarea.input {
 @supports not (margin-bottom: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem )) {
     .main-blok__text:not(:last-child) {
       margin-bottom: calc(1.25rem + 1.75 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
+    .icons-main-blok__circle {
+      width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem );
+    }
+}
+
+@supports not (width: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
+    .icons-main-blok__circle {
+      width: calc(21.875rem + 14.6875 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
+    .icons-main-blok__circle {
+      height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem );
+    }
+}
+
+@supports not (height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
+    .icons-main-blok__circle {
+      height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 83.125);
     }
 }
 }
