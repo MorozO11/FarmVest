@@ -9,8 +9,8 @@
     @include adaptiveValue("padding-bottom", 60, 10);
     &._header-scroll{
         padding-top: toRem(20);
-        padding-bottom: toRem(20);
-        background-color:rgba(0,0,0,0.4);
+        padding-bottom: toRem(25);
+        background-color:rgba(0,0,0,0.6);
 
     }
     // .header__container-big
