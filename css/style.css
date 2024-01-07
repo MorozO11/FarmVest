@@ -358,6 +358,10 @@ textarea.input {
   color: #23B123;
 }
 
+.text {
+  line-height: 180%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -370,8 +374,8 @@ textarea.input {
 
 .header._header-scroll {
   padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 1.5625rem;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .header__container-big {
@@ -465,7 +469,6 @@ textarea.input {
 }
 
 .main-blok__text {
-  line-height: 180%;
   max-width: 35.625rem;
 }
 
@@ -474,6 +477,11 @@ textarea.input {
 }
 
 .icons-main-blok {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   pointer-events: none;
 }
 
@@ -544,6 +552,29 @@ textarea.input {
           transform: translate(calc(-50% + 1.6875rem), -46%);
 }
 
+.partners__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1.5625rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.partners__item {
+  text-align: center;
+}
+
+.partners__item img {
+  max-width: 100%;
+}
+
 @media (min-width: 61.99875em) {
   .button {
     min-width: 8.875rem;
@@ -553,6 +584,10 @@ textarea.input {
 @media (min-width: 103.125em) {
   .title {
     font-size: 4.375rem;
+  }
+
+  .title_s64 {
+    font-size: 4rem;
   }
 
   .header {
@@ -596,11 +631,19 @@ textarea.input {
   .icons-main-blok__circle {
     height: 36.5625rem;
   }
+
+  .partners {
+    padding-bottom: 12.5rem;
+  }
 }
 
 @media (max-width: 20em) {
   .title {
     font-size: 2.8125rem;
+  }
+
+  .title_s64 {
+    font-size: 2.5rem;
   }
 
   .header {
@@ -644,6 +687,18 @@ textarea.input {
   .icons-main-blok__circle {
     height: 21.875rem;
   }
+
+  .partners {
+    padding-bottom: 1.875rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .partners__container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (max-width: 67.5em) {
@@ -659,7 +714,7 @@ textarea.input {
   }
 
   .button_border {
-    padding: 0.875rem 1.25rem;
+    padding: 0.875rem 1.1875rem;
   }
 }
 
@@ -807,6 +862,18 @@ textarea.input {
     }
 }
 
+@supports (font-size: clamp( 2.5rem , 2.1390977444rem  +  1.8045112782vw , 4rem )) {
+    .title_s64 {
+      font-size: clamp( 2.5rem , 2.1390977444rem  +  1.8045112782vw , 4rem );
+    }
+}
+
+@supports not (font-size: clamp( 2.5rem , 2.1390977444rem  +  1.8045112782vw , 4rem )) {
+    .title_s64 {
+      font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 83.125);
+    }
+}
+
 @supports (padding-top: clamp( 0.625rem , -0.1268796992rem  +  3.7593984962vw , 3.75rem )) {
     .header {
       padding-top: clamp( 0.625rem , -0.1268796992rem  +  3.7593984962vw , 3.75rem );
@@ -928,6 +995,18 @@ textarea.input {
 @supports not (height: clamp( 21.875rem , 18.3411654135rem  +  17.6691729323vw , 36.5625rem )) {
     .icons-main-blok__circle {
       height: calc(21.875rem + 14.6875 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (padding-bottom: clamp( 1.875rem , -0.6813909774rem  +  12.7819548872vw , 12.5rem )) {
+    .partners {
+      padding-bottom: clamp( 1.875rem , -0.6813909774rem  +  12.7819548872vw , 12.5rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 1.875rem , -0.6813909774rem  +  12.7819548872vw , 12.5rem )) {
+    .partners {
+      padding-bottom: calc(1.875rem + 10.625 * (100vw - 20rem) / 83.125);
     }
 }
 }
