@@ -228,9 +228,7 @@
     &__content {
         @include adaptiveValue("padding-right", 95, 30, 2, 1420, 992);
 
-        @media (max-width: $mobileSmall) {
-            text-align: center;
-        }
+
     }
 
     // .how__title
@@ -258,11 +256,13 @@
 
     // .how__image
 
-    &__image {   
-    }
+    &__image {}
 }
 
 .steps-how {
+    @media (max-width: $mobileSmall) {
+        text-align: center;
+    }
 
     // .steps-how__item
 
@@ -340,7 +340,11 @@
     // .pathway__image
     &__image {
         flex: 0 0 percent(694, 1420);
-    
+
+        @media (min-width:$tablet) {
+            width: 100%;
+        }
+
         .image-block__circle {
             top: auto;
             right: auto;
@@ -392,71 +396,172 @@
         display: grid;
         gap: toRem(24);
     }
+}
 
-    .spollers-pathway {
+.spollers-pathway {
 
-        // .spollers-pathway__item
+    // .spollers-pathway__item
 
-        &__item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: toRem(10);
-            overflow: hidden;
+    &__item {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: toRem(10);
+        overflow: hidden;
+    }
+
+    // .spollers-pathway__title
+
+    &__title {
+        width: 100%;
+        display: block;
+        text-align: left;
+        padding: toRem(24) toRem(30);
+        display: flex;
+        line-height: 177%;
+        @include adaptiveValue("font-size", 24, 18, );
+        align-items: center;
+        gap: toRem(10);
+        justify-content: space-between;
+        list-style: none;
+
+        &::marker,
+        &::-webkit-details-marker {
+            display: none;
         }
 
-        // .spollers-pathway__title
+        &::after {
+            content: '';
+            background: url("@img/icons/arrow.svg") center / 100% no-repeat;
+            flex: 0 0 toRem(24);
+            height: toRem(24);
+            transition: all 0.3s ease 0s;
+        }
 
-         &__title {
-            width: 100%;
-            display: block;
-            text-align: left;
-            padding: toRem(24) toRem(30);
-            display: flex;
-            line-height: 177%;
-            @include adaptiveValue("font-size", 24, 18, );
-            align-items: center;
-            gap: toRem(10);
-            justify-content: space-between;
-            list-style: none;
-            &::marker,
-            &::-webkit-details-marker {
-                display: none;
-            }
+        &._spoller-active {
+            border-radius: toRem(10);
 
             &::after {
-                content: '';
-                background: url("@img/icons/arrow.svg") center / 100% no-repeat;
-                flex: 0 0 toRem(24);
-                height: toRem(24);
-                transition: all 0.3s ease 0s;
+                transform: rotate(-180deg);
             }
+        }
 
-            &._spoller-active {
-                border-radius: toRem(10);
+        @media (max-width:$mobileSmall) {
+            line-height: 130%;
+            padding: toRem(18) toRem(20);
 
-                &::after {
-                    transform: rotate(-180deg);
-                }
-            }
-
-            @media (max-width:$mobileSmall) {
-                line-height: 130%;
-                padding: toRem(18) toRem(20);
-
-            }
-         }
-
-        // .spollers-pathway__body
-
-        &__body {
-            padding: toRem(0) toRem(30) toRem(24) toRem(30);
-
-            @media (max-width:$mobileSmall) {
-                padding: toRem(0) toRem(20) toRem(18) toRem(20);
-
-            }
         }
     }
 
+    // .spollers-pathway__body
+
+    &__body {
+        padding: toRem(0) toRem(30) toRem(24) toRem(30);
+
+        @media (max-width:$mobileSmall) {
+            padding: toRem(0) toRem(20) toRem(18) toRem(20);
+
+        }
+    }
 }
 
 // ===================================================================================================
+
+.why {
+    @include adaptiveValue ("padding-top", 100, 25);
+    @include adaptiveValue ("padding-bottom", 100, 25);
+
+
+    // .why__container
+
+    &__container {
+        display: grid;
+        row-gap: toRem(30);
+
+        @media (min-width:$tablet) {
+            grid-template-columns: 1fr percent(680, 1420);
+
+        }
+    }
+
+    // .why__content
+
+    &__content {
+        @include adaptiveValue("padding-right", 177, 30, 2, 1420, 992);
+
+
+    }
+
+    // .why__title
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 30, 20);
+
+        }
+    }
+
+
+    // .why__text
+
+    &__text {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 48, 30);
+
+        }
+    }
+
+    // .why__steps
+
+    &__steps {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 55, 30);
+
+        }
+    }
+
+    // .why__button
+
+    &__button {
+        min-width: toRem(222);
+
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+
+    // .why__image
+
+    &__image {
+        padding: 0;
+    }
+}
+
+.steps-why {
+    // list-style: none;
+    list-style-type: none;
+    counter-reset: item;
+    display: grid;
+    @include adaptiveValue("gap", 48, 20);
+
+    // .steps-why__item
+
+    &__item {
+        font-size: toRem(20);
+        line-height: math.div(55, 20);
+        display: flex;
+        @include adaptiveValue("gap", 48, 20);
+
+        &::before {
+            counter-increment: item;
+            content: counter(item);
+            border-radius: 50%;
+            width: toRem(64);
+            height: toRem(64);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: toRem(36);
+            text-align: center;
+            line-height: toRem(70);
+            font-size: 600;
+        }
+
+    }
+}
