@@ -229,6 +229,7 @@ body {
 
 .button {
   font-family: Lato;
+  text-align: center;
   font-weight: 500;
   display: inline-block;
   line-height: 1.2222222222;
@@ -825,13 +826,13 @@ textarea.input {
   gap: 1.5rem;
 }
 
-.pathway .spollers-pathway__item {
+.spollers-pathway__item {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 0.625rem;
   overflow: hidden;
 }
 
-.pathway .spollers-pathway__title {
+.spollers-pathway__title {
   width: 100%;
   display: block;
   text-align: left;
@@ -850,12 +851,12 @@ textarea.input {
   list-style: none;
 }
 
-.pathway .spollers-pathway__title::marker,
-.pathway .spollers-pathway__title::-webkit-details-marker {
+.spollers-pathway__title::marker,
+.spollers-pathway__title::-webkit-details-marker {
   display: none;
 }
 
-.pathway .spollers-pathway__title::after {
+.spollers-pathway__title::after {
   content: "";
   background: url("../img/icons/arrow.svg") center/100% no-repeat;
   -webkit-box-flex: 0;
@@ -866,18 +867,60 @@ textarea.input {
   transition: all 0.3s ease 0s;
 }
 
-.pathway .spollers-pathway__title._spoller-active {
+.spollers-pathway__title._spoller-active {
   border-radius: 0.625rem;
 }
 
-.pathway .spollers-pathway__title._spoller-active::after {
+.spollers-pathway__title._spoller-active::after {
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
           transform: rotate(-180deg);
 }
 
-.pathway .spollers-pathway__body {
+.spollers-pathway__body {
   padding: 0rem 1.875rem 1.5rem 1.875rem;
+}
+
+.why__container {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1.875rem;
+}
+
+.why__button {
+  min-width: 13.875rem;
+}
+
+.why__image {
+  padding: 0;
+}
+
+.steps-why {
+  list-style-type: none;
+  counter-reset: item;
+  display: -ms-grid;
+  display: grid;
+}
+
+.steps-why__item {
+  font-size: 1.25rem;
+  line-height: 2.75;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.steps-why__item::before {
+  counter-increment: item;
+  content: counter(item);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 2.25rem;
+  text-align: center;
+  line-height: 4.375rem;
+  font-size: 600;
 }
 
 @media (min-width: 61.99875em) {
@@ -889,6 +932,15 @@ textarea.input {
     -ms-grid-columns: 1fr 52.8169014085%;
     grid-template-columns: 1fr 52.8169014085%;
   }
+
+  .pathway__image {
+    width: 100%;
+  }
+
+  .why__container {
+    -ms-grid-columns: 1fr 47.8873239437%;
+    grid-template-columns: 1fr 47.8873239437%;
+  }
 }
 
 @media (min-width: 88.75em) {
@@ -898,6 +950,10 @@ textarea.input {
 
   .pathway__content {
     padding-left: 7.875rem;
+  }
+
+  .why__content {
+    padding-right: 11.0625rem;
   }
 }
 
@@ -1012,8 +1068,36 @@ textarea.input {
     margin-bottom: 3rem;
   }
 
-  .pathway .spollers-pathway__title {
+  .spollers-pathway__title {
     font-size: 1.5rem;
+  }
+
+  .why {
+    padding-top: 6.25rem;
+  }
+
+  .why {
+    padding-bottom: 6.25rem;
+  }
+
+  .why__title:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .why__text:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .why__steps:not(:last-child) {
+    margin-bottom: 3.4375rem;
+  }
+
+  .steps-why {
+    gap: 3rem;
+  }
+
+  .steps-why__item {
+    gap: 3rem;
   }
 }
 
@@ -1128,8 +1212,36 @@ textarea.input {
     margin-bottom: 1.875rem;
   }
 
-  .pathway .spollers-pathway__title {
+  .spollers-pathway__title {
     font-size: 1.125rem;
+  }
+
+  .why {
+    padding-top: 1.5625rem;
+  }
+
+  .why {
+    padding-bottom: 1.5625rem;
+  }
+
+  .why__title:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  .why__text:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .why__steps:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
+  .steps-why {
+    gap: 1.25rem;
+  }
+
+  .steps-why__item {
+    gap: 1.25rem;
   }
 }
 
@@ -1284,7 +1396,7 @@ textarea.input {
 }
 
 @media (max-width: 29.99875em) {
-  .how__content {
+  .steps-how {
     text-align: center;
   }
 
@@ -1301,13 +1413,17 @@ textarea.input {
             align-items: center;
   }
 
-  .pathway .spollers-pathway__title {
+  .spollers-pathway__title {
     line-height: 130%;
     padding: 1.125rem 1.25rem;
   }
 
-  .pathway .spollers-pathway__body {
+  .spollers-pathway__body {
     padding: 0rem 1.25rem 1.125rem 1.25rem;
+  }
+
+  .why__button {
+    width: 100%;
   }
 }
 
@@ -1654,14 +1770,98 @@ textarea.input {
 }
 
 @supports (font-size: clamp( 1.125rem , 1.0347744361rem  +  0.4511278195vw , 1.5rem )) {
-    .pathway .spollers-pathway__title {
+    .spollers-pathway__title {
       font-size: clamp( 1.125rem , 1.0347744361rem  +  0.4511278195vw , 1.5rem );
     }
 }
 
 @supports not (font-size: clamp( 1.125rem , 1.0347744361rem  +  0.4511278195vw , 1.5rem )) {
-    .pathway .spollers-pathway__title {
+    .spollers-pathway__title {
       font-size: calc(1.125rem + 0.375 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (padding-top: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem )) {
+    .why {
+      padding-top: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem );
+    }
+}
+
+@supports not (padding-top: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem )) {
+    .why {
+      padding-top: calc(1.5625rem + 4.6875 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (padding-bottom: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem )) {
+    .why {
+      padding-bottom: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 1.5625rem , 0.4346804511rem  +  5.6390977444vw , 6.25rem )) {
+    .why {
+      padding-bottom: calc(1.5625rem + 4.6875 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.25rem , 1.0996240602rem  +  0.7518796992vw , 1.875rem )) {
+    .why__title:not(:last-child) {
+      margin-bottom: clamp( 1.25rem , 1.0996240602rem  +  0.7518796992vw , 1.875rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.25rem , 1.0996240602rem  +  0.7518796992vw , 1.875rem )) {
+    .why__title:not(:last-child) {
+      margin-bottom: calc(1.25rem + 0.625 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 1.6043233083rem  +  1.3533834586vw , 3rem )) {
+    .why__text:not(:last-child) {
+      margin-bottom: clamp( 1.875rem , 1.6043233083rem  +  1.3533834586vw , 3rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 1.6043233083rem  +  1.3533834586vw , 3rem )) {
+    .why__text:not(:last-child) {
+      margin-bottom: calc(1.875rem + 1.125 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 1.4990601504rem  +  1.8796992481vw , 3.4375rem )) {
+    .why__steps:not(:last-child) {
+      margin-bottom: clamp( 1.875rem , 1.4990601504rem  +  1.8796992481vw , 3.4375rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 1.4990601504rem  +  1.8796992481vw , 3.4375rem )) {
+    .why__steps:not(:last-child) {
+      margin-bottom: calc(1.875rem + 1.5625 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem )) {
+    .steps-why {
+      gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem );
+    }
+}
+
+@supports not (gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem )) {
+    .steps-why {
+      gap: calc(1.25rem + 1.75 * (100vw - 20rem) / 83.125);
+    }
+}
+
+@supports (gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem )) {
+    .steps-why__item {
+      gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem );
+    }
+}
+
+@supports not (gap: clamp( 1.25rem , 0.8289473684rem  +  2.1052631579vw , 3rem )) {
+    .steps-why__item {
+      gap: calc(1.25rem + 1.75 * (100vw - 20rem) / 83.125);
     }
 }
 }
@@ -1738,6 +1938,18 @@ textarea.input {
 @supports not (padding-left: clamp( 1.875rem , -12.0315420561rem  +  22.4299065421vw , 7.875rem )) {
     .pathway__content {
       padding-left: calc(1.875rem + 6 * (100vw - 62rem) / 26.75);
+    }
+}
+
+@supports (padding-right: clamp( 1.875rem , -19.4193925234rem  +  34.3457943925vw , 11.0625rem )) {
+    .why__content {
+      padding-right: clamp( 1.875rem , -19.4193925234rem  +  34.3457943925vw , 11.0625rem );
+    }
+}
+
+@supports not (padding-right: clamp( 1.875rem , -19.4193925234rem  +  34.3457943925vw , 11.0625rem )) {
+    .why__content {
+      padding-right: calc(1.875rem + 9.1875 * (100vw - 62rem) / 26.75);
     }
 }
 }
