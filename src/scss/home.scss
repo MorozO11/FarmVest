@@ -405,7 +405,7 @@
 
         // .spollers-pathway__title
 
-        &__title {
+         &__title {
             width: 100%;
             display: block;
             text-align: left;
@@ -417,7 +417,10 @@
             gap: toRem(10);
             justify-content: space-between;
             list-style: none;
-
+            &::marker,
+            &::-webkit-details-marker {
+                display: none;
+            }
 
             &::after {
                 content: '';
@@ -440,7 +443,7 @@
                 padding: toRem(18) toRem(20);
 
             }
-        }
+         }
 
         // .spollers-pathway__body
 
