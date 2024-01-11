@@ -739,6 +739,7 @@ textarea.input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  list-style: none;
 }
 
 .pathway .spollers-pathway__title::after {
