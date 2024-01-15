@@ -646,6 +646,10 @@
 
     &__button {
         min-width: toRem(222);
+        
+        @media (max-width: $mobileSmall) {
+            width: 100%;
+        }
     }
 }
 
