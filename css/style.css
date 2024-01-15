@@ -1578,6 +1578,10 @@ textarea.input {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+
+  .reviews__button {
+    width: 100%;
+  }
 }
 
 @media (max-width: 26.875em) {
