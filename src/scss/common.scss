@@ -26,6 +26,12 @@
     // .page__reviews
 
     &__reviews {}
+
+    // .page__download
+    
+    &__download {
+
+    }
 }
 
 .title {
@@ -37,6 +43,11 @@
 
     &_s64 {
         @include adaptiveValue("font-size", 64, 40);
+
+    }
+
+    &_s56 {
+        @include adaptiveValue("font-size", 56, 35);
 
     }
 
@@ -75,7 +86,7 @@
             content: "";
             position: absolute;
             border-radius: 50%;
-            border: 1px solid #FFF;
+            border: 1px solid rgba(255, 255, 255, 0.37);;
             width: 100%;
             height: 100%;
             top: 0;
